@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.Data.Helpers.Helper
+namespace RetryOperationHelperUnitTests.Helper
 {
     /// <summary>
     /// A class which simulates a given number of failures before succeeding

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Data.Helpers;
-using Microsoft.Data.Helpers.Helper;
 using Microsoft.Samples;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RetryOperationHelperUnitTests.Helper;
 using Xunit;
-using Assert = Xunit.Assert;
 
-namespace Microsoft.Samples
+namespace RetryOperationHelperUnitTests
 {
-    [TestClass]
     public class RetryOperationHelperUnitTests
     {
         [Fact]
