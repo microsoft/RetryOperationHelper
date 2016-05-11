@@ -7,6 +7,9 @@ Retry Operation Helper is licensed under the [MIT license](LICENSE.TXT).
 RetryOperationHelper uses third-party libraries or other resources that may be 
 distributed under licenses different than RetryOperationHelper. 
 
+#Demo
+![Demo Chart](SampleRetryOperationHelperCall.png)
+
 #Usage
 Create a RetryOperationHelper object and pass it a Func<> object containing whatever piece of logic you need retried. From then on, that logic will be retried the given number of times before the exception is thrown back to the original thread.  For example, the code goes from this: 
 
