@@ -25,3 +25,6 @@ await retryHelper.ExecuteWithRetry(func, 3);
 ````
 
 It is useful for code calling databases or anywhere transient issues may be present. Always pass atomic pieces of logic, usually a single call, given the entire code block will be retried if any part of it throws an exception. 
+
+#Microsoft Open Source Code of Conduct
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
