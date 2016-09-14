@@ -15,12 +15,11 @@ namespace RetryOperationHelperUnitTests
             const int numberOfRetriesToAttempt = 3;
             const int numberOfFailuresToSimulate = 2;
 
-            var retryLogic = new RetryOperationHelper();
             var operationSimulator = new OperationSimulator(numberOfFailuresToSimulate);
             Func<Task<bool>> func = () => operationSimulator.SimulateOperationWithFailures();
 
             //Act
-            var result = retryLogic.ExecuteWithRetry(func, numberOfRetriesToAttempt).Result;
+            var result = RetryOperationHelper.ExecuteWithRetry(func, numberOfRetriesToAttempt).Result;
 
             //Assert 
             Assert.Equal(result, true);
@@ -33,12 +32,11 @@ namespace RetryOperationHelperUnitTests
             const int numberOfRetriesToAttempt = 3;
             const int numberOfFailuresToSimulate = 3;
 
-            var retryLogic = new RetryOperationHelper();
             var operationSimulator = new OperationSimulator(numberOfFailuresToSimulate);
             Func<Task<bool>> func = () => operationSimulator.SimulateOperationWithFailures();
 
             //Act
-            Exception ex = Assert.Throws<AggregateException>(() => retryLogic.ExecuteWithRetry(func, numberOfRetriesToAttempt).Wait());
+            Exception ex = Assert.Throws<AggregateException>(() => RetryOperationHelper.ExecuteWithRetry(func, numberOfRetriesToAttempt).Wait());
             Assert.Equal(ex.InnerException.Message, "OperationSimulator: Simulating Operation Failure");
         }
 
@@ -50,13 +48,12 @@ namespace RetryOperationHelperUnitTests
             const int numberOfFailuresToSimulate = 3;
             TimeSpan retryTimeSpan = new TimeSpan(0, 0, 0, 1);
 
-            var retryLogic = new RetryOperationHelper();
             var operationSimulator = new OperationSimulator(numberOfFailuresToSimulate);
             Func<Task<bool>> func = () => operationSimulator.SimulateOperationWithFailures();
             Action<int, Exception> actionUponFailure = new Action<int, Exception>(operationSimulator.ThrowException);
 
             //Act
-            Exception ex = Assert.Throws<AggregateException>(() => retryLogic.ExecuteWithRetry(func, numberOfRetriesToAttempt, retryTimeSpan, actionUponFailure).Wait());
+            Exception ex = Assert.Throws<AggregateException>(() => RetryOperationHelper.ExecuteWithRetry(func, numberOfRetriesToAttempt, retryTimeSpan, actionUponFailure).Wait());
             Assert.Equal(ex.InnerException.Message, "OperationSimulator: ThrowException: Exception thrown to identify method");
         }
     }
