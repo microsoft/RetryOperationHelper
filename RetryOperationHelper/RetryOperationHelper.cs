@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Microsoft.Samples
+namespace DotNetRetryOperationHelper
 {
     /// <summary>
     /// Provides functionality to automatically try the given piece of logic some number of times before re-throwing the exception. 

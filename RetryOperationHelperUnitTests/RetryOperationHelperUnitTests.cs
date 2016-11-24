@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Microsoft.Samples;
+using DotNetRetryOperationHelper;
 using RetryOperationHelperUnitTests.Helper;
 using Xunit;
 
