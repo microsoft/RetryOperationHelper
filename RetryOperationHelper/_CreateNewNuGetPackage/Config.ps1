@@ -16,11 +16,11 @@
 # Specify the Version Number to use for the NuGet package. If not specified, the version number of the assembly being packed will be used.
 # NuGet version number guidance: https://docs.nuget.org/docs/reference/versioning and the Semantic Versioning spec: http://semver.org/
 # e.g. "" (use assembly's version), "1.2.3" (stable version), "1.2.3-alpha" (prerelease version).
-$versionNumber = "1.0.0-alpha"
+$versionNumber = "1.0.2-alpha"
 
 # Specify any Release Notes for this package. 
 # These will only be included in the package if you have a .nuspec file for the project in the same directory as the project file.
-$releaseNotes = "Retry Operation Helper is a simple class which encapsulates the retry of any given piece of C# .NET logic a given number of times before failing, as well as running an optional function on failure. It is useful for any call where transient exception are possible, for example, making a call to a remote database or service. See the Project site at https://github.com/Microsoft/RetryOperationHelper"
+$releaseNotes = "Retry Operation Helper is a simple class which encapsulates the retry of any given piece of C# .NET logic a given number of times before failing, as well as running an optional function on failure. It is useful for any call where transient exception are possible, for example, making a call to a remote database or service. See the Project site at https://github.com/Microsoft/RetryOperationHelper. Retry Operation Helper is licensed under the MIT license. RetryOperationHelper uses third-party libraries or other resources that may be distributed under licenses different than RetryOperationHelper."
 
 # Specify a specific Configuration and/or Platform to only create a NuGet package when building the project with this Configuration and/or Platform.
 #	e.g. $configuration = "Release"
@@ -58,7 +58,7 @@ $appendConfigurationAndPlatformToNuGetPackageFileName = $true
 $sourceToUploadTo = "https://www.nuget.org/api/v2/package"
 
 # The API Key to use to upload the package to the gallery. If not provided and a system-level one does not exist for the specified Source, you will be prompted for it.
-$apiKey = "retryoperationhelper"
+$apiKey = "**Enter API Key HERE **"
 
 # Specify any NuGet Push options to pass to nuget.exe.
 #	e.g. $pushOptions = "-Timeout 120"
