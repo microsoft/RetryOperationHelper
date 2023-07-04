@@ -35,13 +35,13 @@ namespace Microsoft.Samples
             {
                 if (attempt > 0 && retryInterval != null)
                 {
-                    await Task.Delay(retryInterval.Value);
+                    await Task.Delay(retryInterval.Value).ConfigureAwait(true);
                 }
 
                 try
                 {
                     //Call the function passed in by the caller. 
-                    return await func().ConfigureAwait(false);
+                    return await func().ConfigureAwait(true);
                 }
                 catch (Exception exception)
                 {
